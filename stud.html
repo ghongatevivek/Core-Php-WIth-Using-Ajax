@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Registration Using Ajax</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row mt-5">
+			<div class="col-md-6">
+				<h1>Student Registration </h1>
+			</div>
+			<div class="col-md-6">
+				<button type="button" data-toggle="modal" data-target="#stud_modal" class="btn btn-info d-block btn-lg float-right">Register Now</button>
+			</div>
+		</div>
+		<div class="alert alert-success">
+			<strong>Success !! </strong><span id="msg"></span>
+		</div>
+
+		<div class="modal fade" id="stud_modal">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<form method="post" id="studFrm">
+						<div class="modal-header">
+							<h2 class="text-primary modal-title">Student Register</h2>
+							<button type="button" data-dismiss="modal" class="close">&times;</button>
+						</div>
+						<div class="modal-body">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="font-weight-bold">Enter First Name</label>
+										<input type="text" name="s_name" id="snameTxt" class="form-control" placeholder="Enter First Name">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="font-weight-bold">Enter Last Name</label>
+										<input type="text" name="s_lname" id="slnameTxt" class="form-control" placeholder="Enter Your Last Name">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<label class="font-weight-bold">Enter Address</label>
+										<textarea class="form-control" id="saddressTxt" name="s_address" placeholder="Enter Address"></textarea>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="font-weight-bold">Enter Mobile No</label>
+										<input type="text" name="s_mno" id="smnoTxt" class="form-control" placeholder="Enter Phone No">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="font-weight-bold">Hobbies</label>
+										<div class="form-control">
+											<input type="checkbox" class="hobb" name="s_hobbies[]" value="Music">Music
+											<input type="checkbox" class="hobb" name="s_hobbies[]" value="Reading" >Reading
+											<input type="checkbox" class="hobb" name="s_hobbies[]" value="Dance" >Dance
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<label class="font-weight-bold">Enter Email</label>
+										<input type="text" name="s_email" id="semailTxt" class="form-control" placeholder="Enter Email">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<label class="font-weight-bold">City</label>
+										<select class="form-control" name="s_city" id="scityTxt">
+											<option value="">Select City</option>
+											<option value="Surat">Surat</option>
+											<option value="Vapi">Vapi</option>
+											<option value="Ahmdabad">Ahmdabad</option>
+											<option value="Navsari">Navsari</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="row dhide">
+								
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="font-weight-bold">Gender</label>
+										<div class="form-control">
+											<input type="radio" name="s_gender" value="Male" checked>Male
+											<input type="radio" name="s_gender" value="Female" >Female
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 ">
+									<div class="form-group">
+										<label class="font-weight-bold">Enter Password</label>
+										<input type="Password" name="s_pass" class="form-control" placeholder="Enter Password">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" data-dismiss="modal" class="btn btn-secondary">Close</button>
+							<input type="hidden" name="btn" value="add">
+							<input type="hidden" name="sid" value="" id="sid">
+							<input type="submit"  class="btn btn-primary">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<table class="table table-bordered mt-5">
+			<thead>
+				<tr>
+					<th>No</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Address</th>
+					<th>Gender</th>
+					<th>Phone No</th>
+					<th>City</th>
+					<th>Email</th>
+					<th>Hobbies</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody id="tbody"></tbody>
+		</table>
+	</div>
+
+
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="stud_js.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

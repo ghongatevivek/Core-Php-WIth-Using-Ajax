@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>First Ajax Program</title>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<div id="loadData">
+			<h1 class="text-info">This Is Going To Change</h1>
+		</div>
+		<button class="btn btn-success" id="btnClick">Click</button>
+	</div>
+
+
+	<script>
+		$(document).ready(function(){
+			$("#btnClick").click(function(){
+				$("#loadData").load("load.html",function(){
+					alert("This Is Done By Using Ajax");
+				})
+			});
+		});
+	</script>
+</body>
+</html>

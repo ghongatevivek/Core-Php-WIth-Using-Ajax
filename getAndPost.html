@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>First Ajax Program</title>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<!-- <p class="change">This Is Be Changed Using Get </p> -->
+		<p class="changePost">This Is Be Changed Using Post </p>
+		<!-- <button class="btn btn-lg btn-info btnClick">Click For Get</button> -->
+		<button class="btn btn-lg btn-success btnPost">Click For Post</button>
+	</div>
+
+	<script>
+		// $(document).ready(function(){
+		// 	$(".btnClick").click(function(){
+		// 		$.get("get.html",function(data,status){
+		// 			$(".change").html(data);
+		// 			alert(status);
+		// 		});
+				
+		// 	})
+		// });
+
+
+		$(document).ready(function(){
+
+			$(".btnPost").click(function(){
+
+				$.post('post.php',{
+
+					name : "Vivek",
+					lname : "patil"
+
+				}, function (data, status){
+
+					$(".changePost").html(data);
+					alert(status);
+
+				});
+			});
+		})
+
+	</script>
+</body>
+</html>

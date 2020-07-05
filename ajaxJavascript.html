@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>First Ajax Program</title>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<div id="loadData">
+			<h1 class="text-info">This Is Going To Change</h1>
+		</div>
+		<button class="btn btn-success" onclick="myfun()">Click</button>
+	</div>
+
+
+	<script>
+		function myfun() {
+			var req = new XMLHttpRequest();
+			req.open('GET','load.html',true);
+			req.send();
+
+			req.onreadystatechange = function (){
+				if(req.readyState == 4 && req.status == 200){
+					document.getElementById('loadData').innerHTML = req.responseText;
+				}
+			}
+		}
+	</script>
+</body>
+</html>

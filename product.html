@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Product Page</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h1 class="text-secoundary mt-5">Product Details</h1>
+			</div>
+			<div class="col-md-6">
+				<button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-lg btn-outline-success float-right d-block mt-5">Add Product</button>
+			</div>
+		</div>
+
+		<div class="alert alert-success">
+			<strong>Success ! </strong><span id="msg"></span>
+		</div>
+
+		<div class="modal fade" id="myModal">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<form method="post" id="prdForm">
+						<div class="modal-header">
+							<h3 class=" text-info modal-title">Add Product </h3>
+							<button data-dismiss="modal" class="close" type="button">&times;</button>
+						</div>
+
+						<div class="modal-body">
+							<div class="row">
+								<div class="col-md-6">
+									<label>Enter Product Name</label>
+									<input type="text" name="p_name" id="pnameTxt" class="form-control">
+								</div>
+								<div class="col-md-6">
+									<label>Enter Product Price</label>
+									<input type="text" name="p_price" id="priceTxt" class="form-control">
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-12">
+									<label class="d-block">Product Category</label>
+									<div class="form-control">
+										<input type="checkbox" class="cat" name="p_cate[]" value="Fruit">Fruit
+										<!-- <label for="Fruit">Fruit</label> -->
+										<input type="checkbox" class="cat" name="p_cate[]" value="Cloths">Cloths
+										<!-- <label for="Cloths">Cloths</label> -->
+									</div>
+
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-6">
+									<label>Enter Product Qty</label>
+									<input type="text" name="p_qty" id="pqtyTxt" class="form-control">
+								</div>
+								<div class="col-md-6">
+									<label>Enter Product Description</label>
+									<input type="text" name="p_desc" id="pdescTxt" class="form-control">
+								</div>
+							</div>
+						</div>
+
+						<div class="modal-footer">
+							<button class="btn btn-outline-dark" data-dismiss="modal" type="button">Close</button>
+							<input type="hidden" name="btn" value="add">
+							<input type="hidden" name="pid" value="" id="pid">
+							<input type="submit" name="btn" class="btn btn-outline-primary">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<table class="table table-hover table-bordered mt-5">
+			<thead>
+				<tr>
+					<th>No</th>
+					<th>Product Name</th>
+					<th>Product Price</th>
+					<th>Product Category</th>
+					<th>Product Qty</th>
+					<th>Product Description</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody id="tbody">
+				
+			</tbody>
+		</table>
+	</div>
+
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="product_js.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
